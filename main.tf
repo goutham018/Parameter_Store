@@ -1,4 +1,3 @@
-
 module "kms" {
   source = "./modules/kms"
 }
@@ -18,4 +17,8 @@ module "eventbridge" {
   source         = "./modules/eventbridge"
   sns_topic_arn  = module.sns.topic_arn
   parameter_name = module.parameter_store.parameter_name
+}
+
+module "lambda" {
+  source = "./modules/lambda"
 }
